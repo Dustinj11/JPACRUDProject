@@ -1,0 +1,3 @@
+rootProject.name = 'DenzelMovies'
+
+includeFlat 'JPADenzel'

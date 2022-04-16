@@ -45,7 +45,15 @@ class MoviesTest {
 	@Test
 	@DisplayName("testing basic movie mappings")
 	void test() {
-	
+		/*
+		 * SELECT id, title 
+    -> FROM movies;
++----+------------------+
+| id | title            |
++----+------------------+
+|  1 | The Mighty Quinn |
++----+------------------+
+		 */
 
 		assertNotNull(movie);
 		assertEquals("The Mighty Quinn", movie.getTitle());
