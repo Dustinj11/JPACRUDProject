@@ -18,4 +18,11 @@ public class MoviesController {
 		model.addAttribute("debug", dao.findById(1));
 		return "index";
 	}
+	
+	@RequestMapping(path= {"/", "home.do"})
+	public String addMovie(Model model) {
+		model.addAttribute("debug", dao.findById(1));
+		return "index";
+	
+	}
 }
