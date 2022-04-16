@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,8 +10,9 @@
 <body>
 
 <form action="createMovie.do" method=POST>
-Movie Name: <input type="text" name="name" /> <br>
-Released Year: <input type="text" name="realeaseYear" /> <br>
+
+Movie Name: <input type="text" name="title" /> <br>
+Released Year: <input type="text" name="releaseYear" /> <br>
 Movie rating: <input type="text" name="rating" /> <br>
 
 Add this Movie? <input type="submit" value="Add Movie" />

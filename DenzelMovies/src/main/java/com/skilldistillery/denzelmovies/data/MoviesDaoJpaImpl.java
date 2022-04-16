@@ -22,8 +22,15 @@ public class MoviesDaoJpaImpl implements MoviesDAO {
 	
 	@Override
 	public Movies addMovie(Movies movie) {
+//		System.out.println("********" + movie); // shows 0 id prior to adding it to DB
+		
+		movie.setTitle(movie.getTitle());
+		movie.setReleaseYear(movie.getReleaseYear());
+		movie.setRating(movie.getRating());
+		
 		em.persist(movie);
 		em.flush();
+//		System.out.println("********" + movie); // shows updated id 
 		return movie;
 	}
 

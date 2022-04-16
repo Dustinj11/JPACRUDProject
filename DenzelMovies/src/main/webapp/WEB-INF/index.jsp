@@ -11,6 +11,9 @@
 
 
 <h1>Welcome to Denzel's movies</h1>
-${debug}
+<form action="createMovieForm.do" method="POST">
+			Would you like to add a Movie? <br><input type="submit"
+				value="Add Movie" />
+				</form>
 </body>
 </html>
