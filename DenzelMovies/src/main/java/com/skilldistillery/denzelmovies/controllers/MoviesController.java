@@ -21,6 +21,15 @@ public class MoviesController {
 		return "index";
 	}
 	
+//	get all movies
+	@RequestMapping (path="getMovies.do")
+	public String show(Integer movieId, Model model) {
+		model.addAttribute("movies", dao.findAll());
+		return "AllMovies";
+	}
+	
+//	CREATE A NEW MOVIE
+	
 	@RequestMapping (path="createMovieForm.do", method=RequestMethod.POST)
 	public String createMovieForm(Model model, Movies movie) {
 		return "addMovie";
@@ -30,6 +39,28 @@ public class MoviesController {
 	public String createMovie(Model model, Movies movie) {
 		model.addAttribute("movie", dao.addMovie(movie));
 		return "addConfirmation";
+	}
+	
+//	EDIT AND UPDATE 
+	@RequestMapping (path="updateMovie.do", method=RequestMethod.GET)
+	public String update(Model model, int id) {
+		Movies m = dao.findById(id);
+		model.addAttribute("movie", m);
+		return "updateMovie";
+	}
+	
+	@RequestMapping (path="updateMovie.do", method=RequestMethod.POST)
+	public String updateMovie(int id, Movies movie, Model model) {
+		Movies newMovie = dao.updateMovie(id, movie);
+		model.addAttribute("movie", newMovie);
+		return "updateConfirmation";
+	}
+	
+	// DELETE
+	@RequestMapping (path="deleteMovie.do")
+	public String deleteMovie(int id, Model model) {
+		model.addAttribute("pokemon", dao.delete(id));
+		return "deleteConfirmation";
 	}
 
 }
