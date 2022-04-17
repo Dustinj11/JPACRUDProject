@@ -56,7 +56,7 @@ public class MoviesController {
 		return "updateConfirmation";
 	}
 	
-	// DELETE
+// DELETE
 	@RequestMapping (path="deleteMovie.do")
 	public String deleteMovie(int id, Model model) {
 		model.addAttribute("pokemon", dao.delete(id));

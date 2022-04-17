@@ -8,7 +8,6 @@
 </head>
 <body>
 
-
 <div>
  		<h2>Movie ID: ${movie.id}</h2>
 		<h5> Title: ${movie.title}</h5>
@@ -27,9 +26,14 @@
 	<input type="text" value ="${movie.id}" name="movieId" /> 
 	<input type="submit" value="update Movie" />
 	</form>
-		<a href="home.do">Return to Home</a><br/>
+	
+	<form action="deleteMovie.do" method="POST">
+	Input the ID of the movie you'd like to delete <br>
+	 <input type="text" value ="${movie.id}" name="id" />
+	</form>
+	
 	</div>
-
+<a href="home.do">Return to Home</a><br/>
 
 </body>
 </html>

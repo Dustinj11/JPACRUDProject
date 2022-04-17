@@ -5,10 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Lit of Denzels Movies</title>
+<title>List of Denzels Movies</title>
 </head>
 <body>
-
+	<h1>List of Denzel Washington Movie's</h1>
 <c:choose>
 	<c:when test="${! empty movies}">
 	<ul>
@@ -19,6 +19,8 @@
 	
 	<form action="updateMovie.do" method="POST">
 	
+	<h2>Edit a Movie</h2>
+	
 	Movie Id: <input type="text" name="id"/>
 		
 	Movie Title: <input type="text" name="title" /> 
@@ -28,10 +30,18 @@
 	Rating: <input type="text" name="rating" />
 	<br>
 	Update the Movie? <input type="submit" value="Update Movie"/>
-		</form>
+	</form>
+	
+	<form action="deleteMovie.do" method="POST">
+	Input the ID of the movie you'd like to delete <br>
+	 <input type="text" value ="${movie.id}" name="id" />
+	</form>
+		
 <a href="/">Return to Home</a><br/>
 </c:when>
 </c:choose>
+
+
 
 </body>
 </html>
